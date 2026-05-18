@@ -14,7 +14,10 @@ An autonomous AI agent that fetches, summarises, and delivers weekly AI research
 Python · LangGraph · FAISS · Google Gemini API · arXiv SDK · Streamlit · APScheduler
 
 ## Architecture
+
+```
 fetch → filter → summarise → compile → approve → send email
+```
 Built as a LangGraph state machine with 6 nodes and a conditional edge at the approval step.
 
 ## Setup
@@ -56,6 +59,8 @@ python scheduler.py
 ```
 
 ## Project Structure
+
+```
 ├── agent/
 │   ├── graph.py      # LangGraph state machine
 │   ├── tools.py      # arXiv fetcher + Gemini summariser
@@ -66,6 +71,7 @@ python scheduler.py
 ├── app.py            # Streamlit dashboard
 ├── main.py           # Entry point
 └── scheduler.py      # APScheduler weekly cron
+```
 
 ## Key Design Decisions
 - **LangGraph over plain functions** — enables conditional branching and human-in-the-loop
